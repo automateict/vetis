@@ -11,4 +11,4 @@ top_org_type = OrganizationType.create(name: 'Top Org Type')
 
 top_org_unit = OrganizationUnit.create(name: 'Top Org Unit', short_name: 'TOU', organization_type_id: top_org_type.id)
 
-admin_user = User.create(role_id: role.id, organization_unit_id: top_org_unit.id,email: 'admin@membership.com', password: 'admin123')
+admin_user = User.create(role_id: role.id, organization_unit_id: top_org_unit.id,email: 'admin@membership.com', password: 'admin123', admin: true)
