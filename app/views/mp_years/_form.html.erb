@@ -1,0 +1,15 @@
+<%= simple_form_for(@mp_year) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :from, as: :string,  input_html: {"data-format": "YYYY-MM-DD",class: "js-dtp"} %>
+    <%= f.input :to, as: :string,  input_html: {"data-format": "YYYY-MM-DD",class: "js-dtp"} %>
+    <%= f.input :status %>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

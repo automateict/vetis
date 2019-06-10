@@ -1,0 +1,30 @@
+<div class="panel-heading">
+    Membership Types
+</div>
+<div class="panel-body">
+  <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @membership_types.each do |membership_type| %>
+      <tr>
+        <td><%= membership_type.name %></td>
+        <td><%= membership_type.description %></td>
+        <td><%= link_to 'Show', membership_type %>
+        <%= link_to 'Edit', edit_membership_type_path(membership_type) %>
+        <%= link_to 'Destroy', membership_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+      <%= link_to new_membership_type_path do %>
+        <button type="button" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i> Add New Membership Type</button>
+      <% end %>
+</div>

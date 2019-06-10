@@ -1,0 +1,35 @@
+<div class="panel-heading">
+    Membership Payments
+</div>
+<div class="panel-body">
+  <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+  <thead>
+    <tr>
+      <th>Member</th>
+      <th>Payment Year</th>
+      <th>Remark</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.people %></td>
+        <td><%= payment.mp_year %></td>
+        <td><%= payment.remark %></td>
+        <td><%= payment.status %></td>
+        <td><%= link_to 'Show', payment %>
+        <%= link_to 'Edit', edit_payment_path(payment) %>
+        <%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+      <%= link_to new_payment_path do %>
+        <button type="button" class="btn btn-outline btn-primary"><i class="fa fa-plus"></i> New Payment</button>
+      <% end %>
+</div>
